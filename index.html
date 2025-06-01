@@ -115,6 +115,25 @@
             max-width: 3xl; 
             margin-bottom: 1.5rem; 
         }
+        .demo-link-button {
+            margin-top: 0.75rem; /* mt-3 */
+            display: inline-block;
+            background-color: #4f46e5; /* bg-indigo-600 */
+            color: white;
+            font-weight: 600; /* font-semibold */
+            padding-top: 0.5rem; /* py-2 */
+            padding-bottom: 0.5rem;
+            padding-left: 1rem; /* px-4 */
+            padding-right: 1rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            font-size: 0.75rem; /* text-xs */
+            transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        .demo-link-button:hover {
+            background-color: #4338ca; /* hover:bg-indigo-700 */
+        }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -151,6 +170,10 @@
                     <h3>4. Solves Canvas CAPTCHA</h3>
                     <p>Completes engaging interactive task (ad, data label, survey).</p>
                     <div class="info-bubble">Phase 1 Benefit: Engaging verification. Exposed to brand/contributes data.</div>
+                    <a href="https://rosarkar.github.io/captcha_demo_v2/" target="_blank"
+                       class="demo-link-button">
+                        See This In Action (Interactive Demo)
+                    </a>
                 </div>
                 <div class="flow-arrow lg:block hidden self-center">➔</div> <div class="flow-arrow lg:hidden sm:col-span-2 md:col-span-3">⬇</div>
                 <div class="flow-box">
