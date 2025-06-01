@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Protocol - Ecosystem Flowchart</title>
+    <title>Canvas Protocol - Full Ecosystem Flowchart</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -42,26 +42,30 @@
             margin-bottom: 0.5rem;
             font-size: 1rem;
         }
-        .flow-box p {
+        .flow-box p, .flow-box li {
             font-size: 0.875rem; /* text-sm */
             color: #4b5563; /* Gray-600 */
+        }
+        .flow-box .sub-points {
+            font-size: 0.8rem;
+            color: #6b7280; /* Gray-500 */
+            margin-top: 0.5rem;
+            text-align: left;
+            padding-left: 1rem;
+            list-style-type: disc;
         }
         .flow-arrow {
             font-size: 1.5rem; /* text-2xl */
             color: #6b7280; /* Gray-500 */
             margin: 0.5rem 0; /* Vertical margin for arrows */
             text-align: center;
-        }
-        .flow-arrow-horizontal {
-            font-size: 1.5rem;
-            color: #6b7280;
-            margin: 0 0.5rem; /* Horizontal margin */
+            font-weight: bold;
         }
         .actor-lane {
             border: 2px dashed #9ca3af; /* Gray-400 dashed border */
             border-radius: 0.5rem;
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem; /* Reduced margin for tighter layout */
         }
         .actor-lane-title {
             font-size: 1.25rem; /* text-xl */
@@ -76,31 +80,33 @@
             background-color: #eef2ff; /* Indigo-50 */
             border: 2px solid #818cf8; /* Indigo-300 */
         }
-        .blockchain-layer {
+        .blockchain-layer-box { /* Renamed for clarity */
             background-color: #f0fdf4; /* Green-50 */
             border: 2px solid #86efac; /* Green-300 */
-            margin-top: 1rem;
-        }
-        .interaction-group {
-            display: flex;
-            flex-direction: column; /* Default for mobile */
-            align-items: center;
-            gap: 0.5rem; /* Space between items in a group */
-        }
-        @media (min-width: 768px) { /* md breakpoint */
-            .interaction-group {
-                flex-direction: row; /* Row layout for wider screens */
-                justify-content: center;
-            }
         }
         .info-bubble {
             background-color: #fffbeb; /* Amber-50 */
             color: #b45309; /* Amber-700 */
             border: 1px solid #fde68a; /* Amber-200 */
-            padding: 0.75rem;
+            padding: 0.5rem; /* Smaller padding */
             border-radius: 0.375rem;
-            font-size: 0.8rem;
+            font-size: 0.75rem; /* Smaller font */
             margin-top: 0.5rem;
+        }
+        .phase2-explainer {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #eff6ff; /* Blue-50 */
+            border: 1px solid #bfdbfe; /* Blue-200 */
+            border-radius: 0.5rem;
+            max-width: 700px;
+            text-align: left;
+        }
+        .phase2-explainer h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1d4ed8; /* Blue-700 */
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -108,73 +114,72 @@
 
     <header class="mb-10 text-center">
         <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Canvas Protocol</h1>
-        <p class="text-lg md:text-xl text-gray-600">Full Ecosystem Flowchart (Phase 1 Focus)</p>
-        <p class="text-sm text-gray-500 mt-2">This flowchart illustrates the interactions between users, publishers, various requesters (Advertisers, AI Corps, Academia), and the Canvas Protocol marketplace, highlighting the value flow and the on-chain nature of the marketplace.</p>
+        <p class="text-lg md:text-xl text-gray-600">Comprehensive Ecosystem Flow</p>
+        <p class="text-sm text-gray-500 mt-2 max-w-3xl mx-auto">
+            This flowchart illustrates the interactions between end-users, publishers (websites/apps), requesters (Advertisers, AI Corporations, Academia), and the Canvas Protocol B2B marketplace. It highlights the flow of value and the foundational role of the on-chain marketplace logic (built on an Ethereum L2 and leveraging EigenLayer AVS technology).
+        </p>
     </header>
 
-    <div class="flow-container max-w-6xl mx-auto">
+    <div class="flow-container max-w-7xl mx-auto">
 
-        <section class="flow-section actor-lane">
+        <section class="flow-section actor-lane w-full">
             <h2 class="actor-lane-title">👤 End User Journey</h2>
-            <div class="grid grid-cols-1 md:grid-cols-5 items-center gap-2 md:gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start gap-2 md:gap-4">
                 <div class="flow-box">
                     <h3>1. Discovery</h3>
-                    <p>User searches via AI Assistant or browses web.</p>
+                    <p>User queries AI Assistant (e.g., "best burgers") or browses web.</p>
                 </div>
-                <div class="flow-arrow md:block hidden">➔</div>
-                <div class="flow-arrow md:hidden">⬇</div>
+                <div class="flow-arrow lg:block hidden self-center">➔</div> <div class="flow-arrow lg:hidden sm:col-span-2 md:col-span-3">⬇</div>
                 <div class="flow-box">
-                    <h3>2. Clicks Link</h3>
-                    <p>User clicks a link to external content (e.g., blog, news site).</p>
+                    <h3>2. Clicks Source Link</h3>
+                    <p>User clicks link to external content (e.g., "Burgers Toronto Blog").</p>
                 </div>
-                <div class="flow-arrow md:block hidden">➔</div>
-                <div class="flow-arrow md:hidden">⬇</div>
+                <div class="flow-arrow lg:block hidden self-center">➔</div> <div class="flow-arrow lg:hidden sm:col-span-2 md:col-span-3">⬇</div>
                 <div class="flow-box">
-                    <h3>3. Verification Triggered</h3>
-                    <p>(On Publisher's Site) Interstitial explains upcoming Canvas CAPTCHA.</p>
+                    <h3>3. Verification Triggered (on Publisher Site)</h3>
+                    <p>Interstitial explains upcoming Canvas CAPTCHA task.</p>
                 </div>
-                <div class="flow-arrow md:block hidden">➔</div>
-                <div class="flow-arrow md:hidden">⬇</div>
+                <div class="flow-arrow lg:block hidden self-center">➔</div> <div class="flow-arrow lg:hidden sm:col-span-2 md:col-span-3">⬇</div>
                 <div class="flow-box">
                     <h3>4. Solves Canvas CAPTCHA</h3>
-                    <p>User completes engaging interactive task (ad experience, data labeling, survey question).</p>
-                    <div class="info-bubble">Benefit: Engaging verification, (future: crypto rewards). Exposed to brand/contributes data.</div>
+                    <p>Completes engaging interactive task (ad, data label, survey).</p>
+                    <div class="info-bubble">Phase 1 Benefit: Engaging verification. Exposed to brand/contributes data.</div>
                 </div>
-                <div class="flow-arrow md:block hidden">➔</div>
-                <div class="flow-arrow md:hidden">⬇</div>
+                <div class="flow-arrow lg:block hidden self-center">➔</div> <div class="flow-arrow lg:hidden sm:col-span-2 md:col-span-3">⬇</div>
                 <div class="flow-box">
                     <h3>5. Accesses Content</h3>
-                    <p>User successfully verified and gains access to the Publisher's content.</p>
+                    <p>Successfully verified, gains access to Publisher's content.</p>
                 </div>
             </div>
         </section>
 
-        <div class="flow-arrow text-4xl">↕</div>
+        <div class="flow-arrow text-4xl my-2 md:my-4">↕</div> 
+        <p class="text-sm text-gray-500 -mt-4 md:-mt-6 mb-2 md:mb-4">(User interaction on Publisher site triggers marketplace events)</p>
 
-        <section class="flow-section grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+
+        <section class="flow-section grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
             
             <div class="actor-lane">
-                <h2 class="actor-lane-title">📰 Publisher (Websites/Apps)</h2>
+                <h2 class="actor-lane-title">📰 Publisher ("Burgers Toronto Blog")</h2>
                 <div class="flow-box">
-                    <h3>A. Integrates Canvas SDK</h3>
-                    <p>Embeds Canvas Protocol on their site/app.</p>
+                    <h3>A. Integrates SDK</h3>
+                    <p>Embeds Canvas Protocol.</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
                 <div class="flow-box">
-                    <h3>B. Offers CAPTCHA Inventory</h3>
-                    <p>Interactive CAPTCHA slots become available on the Canvas Marketplace.</p>
-                    <p class="text-xs">(Sets category, estimated views, floor price)</p>
+                    <h3>B. Offers Inventory</h3>
+                    <p>CAPTCHA slots listed on Canvas Marketplace (sets floor price).</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
                 <div class="flow-box marketplace-hub">
                     <h3>C. Receives Task Assignment</h3>
-                    <p>From Canvas Marketplace, to display specific Ad/Data Task to End User.</p>
+                    <p>From Canvas Marketplace, to display to End User based on winning bid.</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
-                <div class="flow-box blockchain-layer">
+                <div class="flow-box blockchain-layer-box">
                     <h3>D. Receives Payout</h3>
-                    <p>Revenue share (e.g., XLM, ETH/Stablecoin) via blockchain for successful CAPTCHA interactions.</p>
-                    <div class="info-bubble">Incentive: Monetizes verification traffic.</div>
+                    <p>Revenue share (e.g., ETH/Stablecoin) via Ethereum L2 for successful CAPTCHA interactions.</p>
+                    <div class="info-bubble">Incentive: Monetizes traffic.</div>
                 </div>
             </div>
 
@@ -182,28 +187,27 @@
                 <h2 class="actor-lane-title">🔄 Canvas Protocol (B2B Marketplace)</h2>
                 <div class="flow-box">
                     <h3>Central Hub (On-Chain Logic)</h3>
-                    <p>Facilitates discovery, bidding, and matching for diverse human interaction tasks (Ads, AI Training, Surveys) on Stellar or Ethereum L2 (via EigenLayer AVS).</p>
+                    <p>Facilitates discovery, bidding, and matching for Ads, AI Training, Surveys on an Ethereum L2, leveraging EigenLayer AVS technology.</p>
                 </div>
                 <div class="flow-arrow">↕</div>
                 <div class="flow-box">
-                    <h3>Manages Task Serving Logic</h3>
-                    <p>Delivers appropriate CAPTCHA experience (ad, data task, survey) based on accepted bids/campaigns.</p>
+                    <h3>Task Serving & Verification</h3>
+                    <p>Delivers CAPTCHA experience. "Proof of Human Interaction" attestations managed by an AVS on EigenLayer.</p>
                 </div>
                 <div class="flow-arrow">↕</div>
-                <div class="flow-box blockchain-layer">
-                    <h3>Processes Transactions & Verifications</h3>
-                    <p>Handles B2B payments and executes marketplace auction/matching logic on Stellar/L2.
-                       (If EigenLayer AVS: Manages "Proof of Human Interaction" attestations for all task types, ensuring data integrity.)</p>
+                <div class="flow-box blockchain-layer-box">
+                    <h3>Processes Transactions</h3>
+                    <p>Handles B2B payments & executes marketplace logic on Ethereum L2.</p>
                 </div>
                 <div class="flow-arrow">↕</div>
                 <div class="flow-box">
-                    <h3>Provides Analytics & Reporting</h3>
-                    <p>Offers engagement data, completion rates, and task-specific metrics to Requesters.</p>
+                    <h3>Provides Analytics</h3>
+                    <p>Offers engagement data & metrics to Requesters.</p>
                 </div>
                  <div class="flow-arrow">↕</div>
                 <div class="flow-box">
-                    <h3>Takes Protocol Commission</h3>
-                    <p>Fee on successful marketplace transactions, processed on-chain.</p>
+                    <h3>Takes Commission</h3>
+                    <p>Fee on successful marketplace transactions (on-chain on Ethereum L2).</p>
                 </div>
             </div>
 
@@ -211,44 +215,48 @@
                 <h2 class="actor-lane-title">📢 Requesters (Advertisers, AI Corps, Academia)</h2>
                 <div class="flow-box">
                     <h3>X. Defines Campaign/Task</h3>
-                    <p>Sets budget, defines task: ad creative, AI model training parameters, or academic survey design.</p>
+                    <p>Sets budget, ad creative, AI training parameters, or survey design.</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
                 <div class="flow-box">
                     <h3>Y. Bids on Inventory/Tasks</h3>
-                    <p>Places bids for CAPTCHA slots/human interaction tasks on the Canvas Marketplace.</p>
+                    <p>Places bids on Canvas Marketplace for CAPTCHA slots.</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
-                <div class="flow-box blockchain-layer">
+                <div class="flow-box blockchain-layer-box">
                     <h3>Z. Pays for Campaign/Task</h3>
-                    <p>Funds campaign (e.g., XLM, ETH/Stablecoin) via blockchain upon bid acceptance or task completion milestones.</p>
+                    <p>Funds campaign (e.g., ETH/Stablecoin) via Ethereum L2 upon bid acceptance/completion.</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
-                <div class="flow-box marketplace-hub">
-                    <h3>W. Receives Value</h3>
-                    <p>Gets verified human attention/engagement, AI training data, or survey responses. Receives analytics.</p>
-                    <div class="info-bubble">Incentive: Effective, bot-free engagement; high-quality, verified data.</div>
+                <div class="flow-box marketplace-hub"> <h3>W. Receives Value</h3>
+                    <p>Gets verified human attention, AI training data, or survey responses. Receives analytics.</p>
+                    <div class="info-bubble">Incentive: Effective engagement; high-quality, verified data.</div>
                 </div>
             </div>
         </section>
 
-        <section class="flow-section mt-4">
-            <div class="flow-box blockchain-layer p-6">
-                <h3 class="text-xl">🔗 Blockchain Layer (Stellar or EigenLayer AVS on Ethereum/L2)</h3>
-                <p class="mt-2">
-                    Provides the trust, security, and infrastructure for:
-                </p>
+        <section class="flow-section actor-lane blockchain-layer-box w-full lg:max-w-4xl">
+            <h2 class="actor-lane-title">🔗 Blockchain Layer (EigenLayer AVS & Ethereum L2)</h2>
+            <div class="flow-box bg-transparent border-none shadow-none">
+                <p class="text-center">Provides trust, security, and infrastructure for:</p>
                 <ul class="list-disc list-inside mt-2 text-sm text-left max-w-md mx-auto">
-                    <li>Secure and transparent B2B payments and core **marketplace operations (e.g., auctions, order matching)**.</li>
-                    <li>(If EigenLayer AVS) Verifiable **"Proof of Human Interaction" attestations**, secured by restaked ETH, ensuring the integrity of the verification process for all task types (ads, data labeling, surveys).</li>
-                    <li>Potential future on-chain governance and user reward distributions.</li>
+                    <li>Secure & transparent B2B payments and core <strong>marketplace operations</strong> (auctions, order matching) on an Ethereum L2.</li>
+                    <li>Verifiable <strong>"Proof of Human Interaction" attestations provided by an AVS on EigenLayer</strong>, secured by restaked ETH, ensuring integrity for all task types.</li>
+                    <li>Future on-chain governance and Phase 2 user reward distributions (ETH/Stablecoins).</li>
                 </ul>
             </div>
+        </section>
+
+        <section class="flow-section phase2-explainer w-full lg:max-w-4xl">
+            <h3>🚀 Future Vision: Phase 2 - User Rewards & Ecosystem Growth</h3>
+            <p>
+                Once the B2B marketplace is established (Phase 1), Canvas Protocol will introduce <strong>direct crypto rewards (e.g., ETH/Stablecoins)</strong> to end-users for successfully completing interactive CAPTCHAs. This will create a three-sided economy, further incentivizing user participation, increasing the value of the CAPTCHA inventory for publishers, and providing an even more engaged audience for requesters. This phase aims to drive broader adoption of the Ethereum L2 and EigenLayer ecosystem and establish a new standard for user verification online.
+            </p>
         </section>
     </div>
 
     <footer class="text-center text-gray-500 text-sm mt-12 mb-6">
-        Canvas Protocol - Demo Flowchart
+        Canvas Protocol - Comprehensive Ecosystem Flow
     </footer>
 
 </body>
