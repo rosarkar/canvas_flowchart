@@ -220,23 +220,23 @@
             <div class="actor-lane marketplace-hub">
                 <h2 class="actor-lane-title">🔄 Canvas Protocol (B2B Marketplace)</h2>
                 <div class="flow-box">
-                    <h3>Central Hub (On-Chain Logic)</h3>
-                    <p>Facilitates discovery, bidding, and matching for Ads, AI Training, Surveys on an Ethereum L2, leveraging EigenLayer AVS technology.</p>
+                    <h3>Central Hub (App on L2)</h3>
+                    <p>Facilitates discovery, bidding, and matching for Ads, AI Training, Surveys on an Ethereum L2, as a Verifiable Application leveraging EigenLayer AVSs.</p>
                 </div>
                 <div class="flow-arrow">↕</div>
                 <div class="flow-box">
-                    <h3>Task Serving & Verification</h3>
-                    <p>Delivers CAPTCHA experience. "Proof of Human Interaction" attestations managed by an AVS on EigenLayer.</p>
+                    <h3>Task Serving & Consumes AVS Proofs</h3>
+                    <p>Delivers CAPTCHA experience. Relies on "Proof of Human Interaction" attestations from integrated EigenLayer AVSs.</p>
                 </div>
                 <div class="flow-arrow">↕</div>
                 <div class="flow-box blockchain-layer-box">
                     <h3>Processes Transactions</h3>
-                    <p>Handles B2B payments & executes marketplace logic on Ethereum L2.</p>
+                    <p>Handles B2B payments & executes marketplace logic on Ethereum L2, using AVS attestations for settlement triggers.</p>
                 </div>
                 <div class="flow-arrow">↕</div>
                 <div class="flow-box">
                     <h3>Provides Analytics</h3>
-                    <p>Offers engagement data & metrics to Requesters.</p>
+                    <p>Offers engagement data & metrics to Requesters, backed by AVS-verified interactions.</p>
                 </div>
                  <div class="flow-arrow">↕</div>
                 <div class="flow-box">
@@ -254,65 +254,68 @@
                 <div class="flow-arrow">⬇</div>
                 <div class="flow-box">
                     <h3>Y. Bids on Inventory/Tasks</h3>
-                    <p>Places bids on Canvas Marketplace for CAPTCHA slots.</p>
+                    <p>Places bids on Canvas Marketplace for CAPTCHA slots, trusting AVS-verified human interaction.</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
                 <div class="flow-box blockchain-layer-box">
                     <h3>Z. Pays for Campaign/Task</h3>
-                    <p>Funds campaign (e.g., ETH/Stablecoin) via Ethereum L2 upon bid acceptance/completion.</p>
+                    <p>Funds campaign (e.g., ETH/Stablecoin) via Ethereum L2 upon bid acceptance/verified completions.</p>
                 </div>
                 <div class="flow-arrow">⬇</div>
                 <div class="flow-box marketplace-hub"> <h3>W. Receives Value</h3>
-                    <p>Gets verified human attention, AI training data, or survey responses. Receives analytics.</p>
-                    <div class="info-bubble">Incentive: Effective engagement; high-quality, verified data.</div>
+                    <p>Gets verified human attention, AI training data, or survey responses. Receives analytics based on AVS attestations.</p>
+                    <div class="info-bubble">Incentive: Effective engagement; high-quality, AVS-verified data.</div>
                 </div>
             </div>
         </section>
 
         <div class="flow-arrow text-4xl my-2 md:my-4">↕</div> 
-        <p class="text-sm text-gray-500 -mt-4 md:-mt-6 mb-2 md:mb-4">(Canvas Protocol's B2B Marketplace is built on-chain, with core logic & transactions processed by the Blockchain Layer)</p>
+        <p class="text-sm text-gray-500 -mt-4 md:-mt-6 mb-2 md:mb-4">(Canvas Protocol's B2B Marketplace (App on L2) interacts with EigenLayer AVSs and the L2 for its core logic & transactions)</p>
 
 
         <section class="flow-section actor-lane blockchain-layer-box w-full lg:max-w-4xl">
             <h2 class="actor-lane-title">🔗 Blockchain Layer (EigenLayer AVSs & Ethereum L2)</h2>
             <div class="flow-box bg-transparent border-none shadow-none">
-                <p class="text-center font-semibold text-gray-700 mb-2">
-                    Canvas Protocol is a Verifiable Application built with AVS technology on EigenLayer, operating its marketplace on an Ethereum L2. This provides:
+                 <p class="text-center font-semibold text-gray-700 mb-2">
+                    Canvas Protocol operates as a <strong>Verifiable Application</strong>, integrating AVS technology on EigenLayer, with its B2B marketplace on an Ethereum L2. This provides:
                 </p>
-                <ul class="list-disc list-inside mt-2 text-sm text-left max-w-lg mx-auto space-y-2">
+                <ul class="list-disc list-inside mt-2 text-sm text-left max-w-xl mx-auto space-y-3">
                     <li>
                         <strong>Decentralized Trust & Security via EigenLayer Restaking:</strong>
-                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600">
-                            <li>AVS operators stake ETH, providing high economic security for validating interactions.</li>
+                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600 space-y-1">
+                            <li>AVS operators restake ETH, providing high economic security for validating interactions.</li>
                             <li>Attributable fault with slashing for misbehavior ensures operator honesty and the trustworthiness of attestations.</li>
                             <li>Shared security from Ethereum reduces risks compared to isolated systems.</li>
                         </ul>
                     </li>
                     <li>
                         <strong>Core Marketplace Operations on Ethereum L2:</strong>
-                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600">
-                            <li>Transparent B2B payments, ad auctions, and order matching.</li>
+                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600 space-y-1">
+                            <li>Handles efficient B2B payments, ad auctions, and order matching for the marketplace.</li>
                         </ul>
                     </li>
                     <li>
-                        <strong>Integrated AVS Services for Verifiability:</strong>
-                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600">
+                        <strong>Integrated AVS Services for End-to-End Verifiability:</strong>
+                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600 space-y-1">
                             <li>
-                                <strong>Decentralized Identity/Personhood AVS:</strong> Provides "Proof of Human Interaction" by validating CAPTCHA telemetry and user uniqueness (potentially via anonymous proof tokens or behavioral analysis), crucial for Phase 1 and beyond.
+                                <strong>Decentralized Identity/Personhood AVS:</strong> Provides "Proof of Human Interaction" by validating CAPTCHA telemetry and user uniqueness (e.g., via privacy-preserving behavioral indicators or future anonymous proof tokens), crucial for verifying genuine engagement.
                             </li>
                             <li>
-                                <strong>Data Validation AVS:</strong> For data collection CAPTCHAs (AI training, surveys), operators verify data quality/process compliance, generating on-chain attestations for clients.
+                                <strong>Data Validation AVS:</strong> For data collection CAPTCHAs (AI training, surveys), AVS operators verify data quality (e.g., against ground truth or via consensus) and process compliance, generating on-chain attestations of data integrity for clients.
                             </li>
                             <li>
-                                <strong>Oracle AVSs:</strong> Securely bring verified interaction counts, campaign metrics, and settlement data on-chain for transparent marketplace operations and advertiser reporting.
+                                <strong>Oracle AVSs:</strong> Securely bring verified interaction counts, campaign metrics, and settlement data from the L2 marketplace on-chain (or make it accessible to other on-chain contracts) for enhanced transparency and advertiser reporting.
                             </li>
                             <li>
-                                <strong>(Future) Incentive Mechanism AVS:</strong> To manage and distribute Phase 2 user rewards based on verified interactions.
+                                <strong>(Future) Incentive Mechanism AVS:</strong> To manage and distribute Phase 2 user rewards based on AVS-verified interactions.
                             </li>
                         </ul>
                     </li>
                     <li>
                         <strong>On-Chain Accountability:</strong> Irrevocable, transparent audit trail of interactions and attestations, building trust with all platform participants.
+                    </li>
+                     <li>
+                        <strong>Interaction Model:</strong> Canvas Protocol (on L2) makes on-chain calls to AVS contracts for critical proofs/attestations and may use off-chain communication with AVS operator nodes for processing detailed CAPTCHA telemetry before succinct on-chain validation.
                     </li>
                 </ul>
             </div>
@@ -329,9 +332,6 @@
     <footer class="text-center text-gray-500 text-sm mt-12 mb-6">
         Canvas Protocol - Comprehensive Ecosystem Flow
     </footer>
-
-</body>
-</html>
 
 </body>
 </html>
