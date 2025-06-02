@@ -46,6 +46,10 @@
             font-size: 0.875rem; /* text-sm */
             color: #4b5563; /* Gray-600 */
         }
+        .flow-box ul.list-circle { /* Specific styling for nested lists */
+            list-style-type: circle;
+            margin-left: 1rem; /* Indent nested list */
+        }
         .flow-box .sub-points {
             font-size: 0.8rem;
             color: #6b7280; /* Gray-500 */
@@ -112,7 +116,7 @@
             font-size: 0.95rem; 
             line-height: 1.6;
             color: #374151; /* Gray-700 */
-            max-width: 3xl; 
+            /* max-width: 3xl; Tailwind class, applied directly */
             margin-bottom: 1.5rem; 
         }
         .demo-link-button {
@@ -270,13 +274,46 @@
 
 
         <section class="flow-section actor-lane blockchain-layer-box w-full lg:max-w-4xl">
-            <h2 class="actor-lane-title">🔗 Blockchain Layer (EigenLayer AVS & Ethereum L2)</h2>
+            <h2 class="actor-lane-title">🔗 Blockchain Layer (EigenLayer AVSs & Ethereum L2)</h2>
             <div class="flow-box bg-transparent border-none shadow-none">
-                <p class="text-center">Provides trust, security, and infrastructure for:</p>
-                <ul class="list-disc list-inside mt-2 text-sm text-left max-w-md mx-auto">
-                    <li>Secure & transparent B2B payments and core <strong>marketplace operations</strong> (auctions, order matching) on an Ethereum L2.</li>
-                    <li>Verifiable <strong>"Proof of Human Interaction" attestations provided by an AVS on EigenLayer</strong>, secured by restaked ETH, ensuring integrity for all task types.</li>
-                    <li>Future on-chain governance and Phase 2 user reward distributions (ETH/Stablecoins).</li>
+                <p class="text-center font-semibold text-gray-700 mb-2">
+                    Canvas Protocol is a Verifiable Application built with AVS technology on EigenLayer, operating its marketplace on an Ethereum L2. This provides:
+                </p>
+                <ul class="list-disc list-inside mt-2 text-sm text-left max-w-lg mx-auto space-y-2">
+                    <li>
+                        <strong>Decentralized Trust & Security via EigenLayer Restaking:</strong>
+                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600">
+                            <li>AVS operators stake ETH, providing high economic security for validating interactions.</li>
+                            <li>Attributable fault with slashing for misbehavior ensures operator honesty and the trustworthiness of attestations.</li>
+                            <li>Shared security from Ethereum reduces risks compared to isolated systems.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Core Marketplace Operations on Ethereum L2:</strong>
+                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600">
+                            <li>Transparent B2B payments, ad auctions, and order matching.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Integrated AVS Services for Verifiability:</strong>
+                        <ul class="list-circle list-inside pl-4 text-xs text-gray-600">
+                            <li>
+                                <strong>Decentralized Identity/Personhood AVS:</strong> Provides "Proof of Human Interaction" by validating CAPTCHA telemetry and user uniqueness (potentially via anonymous proof tokens or behavioral analysis), crucial for Phase 1 and beyond.
+                            </li>
+                            <li>
+                                <strong>Data Validation AVS:</strong> For data collection CAPTCHAs (AI training, surveys), operators verify data quality/process compliance, generating on-chain attestations for clients.
+                            </li>
+                            <li>
+                                <strong>Oracle AVSs:</strong> Securely bring verified interaction counts, campaign metrics, and settlement data on-chain for transparent marketplace operations and advertiser reporting.
+                            </li>
+                            <li>
+                                <strong>(Future) Incentive Mechanism AVS:</strong> To manage and distribute Phase 2 user rewards based on verified interactions.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>On-Chain Accountability:</strong> Irrevocable, transparent audit trail of interactions and attestations, building trust with all platform participants.
+                    </li>
                 </ul>
             </div>
         </section>
@@ -292,6 +329,9 @@
     <footer class="text-center text-gray-500 text-sm mt-12 mb-6">
         Canvas Protocol - Comprehensive Ecosystem Flow
     </footer>
+
+</body>
+</html>
 
 </body>
 </html>
